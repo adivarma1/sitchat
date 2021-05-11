@@ -27,7 +27,7 @@ io.on('connection', (socket) => {
         socket.emit('message', {user:'admin', text: `${user.name}, welcome to the room ${user.room}`});
         
 
-        socket.broadcast.to(user.room).emit('message', { user:'admin', text: `${user}, has joined!`}) //to send to other users regarding the new joinee
+        socket.broadcast.to(user.room).emit('message', { user:'admin', text: `${user.name}, has joined!`}) //to send to other users regarding the new joinee
         
         // if no error join user to room
         socket.join(user.room);
